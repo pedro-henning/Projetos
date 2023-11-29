@@ -1,1 +1,9 @@
 
+Faça um Programa que peça a temperatura em graus Celsius, transforme e mostre em graus Fahrenheit.
+
+
+temp_c = float(input("Insira a temperatura em graus Celcius "))
+
+celcius_conversao = temp_c * 33.8
+
+print(f"A temperatura {temp_c} em Celcius é igual a {celcius_conversao} graus Fahrenheit")
