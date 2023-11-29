@@ -1,1 +1,8 @@
+Faça um Programa que peça o raio de um círculo, calcule e mostre sua área.
 
+
+
+raio_circulo = float(input("Insira o raio de um círculo para calcular sua área"))
+
+calculo = 3.14 * (raio_circulo ** raio_circulo)
+print(f"O resultado do calculo do raio {raio_circulo} é igual a {calculo}")
