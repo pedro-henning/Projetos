@@ -1,1 +1,33 @@
+Faça um Programa que leia três números e mostre-os em ordem decrescente.
 
+numero1 = float(input("Insira o preço do primeiro produto "))
+numero2 = float(input("Insira o preço do segundo produto"))
+numero3 = float(input("Insira o preço do terceiro produto"))
+
+if numero1 >= numero2 >= numero3:
+    maior, meio, menor = numero1, numero2, numero3
+elif numero1 >= numero3 >= numero2:
+    maior, meio, menor = numero1, numero2, numero3
+elif numero2 >= numero1 >= numero3:
+    maior, meio, menor = numero2, numero1, numero3
+elif numero2 >= numero3 >= numero1:
+    maior, meio, menor = numero2, numero3, numero1
+elif numero3 >= numero1 >= numero2:
+    maior, meio, menor = numero3, numero1, numero2
+else:
+    maior, meio, menor = numero3, numero2, numero1
+
+print(f"Números em ordem decrescente: {maior}, {meio}, {menor}")        
+
+---------------------------------------------------------------------------------- OU
+
+numero1 = float(input("Insira o preço do primeiro produto "))
+numero2 = float(input("Insira o preço do segundo produto"))
+numero3 = float(input("Insira o preço do terceiro produto"))
+
+maior = max(numero1, numero2, numero3)
+menor = min (numero1, numero2, numero3)
+
+meio = (numero1 + numero2 + numero3) - maior - menor
+
+print(f"Números em ordem descrescente: {maior}, {meio}, {menor}")
