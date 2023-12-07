@@ -1,1 +1,10 @@
+Faça um Programa que peça um valor e mostre na tela se o valor é positivo ou negativo.
+
+
+valor_um = float(input("Insira o primeiro número"))
+
+if valor_um > 0:
+    print(f"Valor {valor_um} é positivo")
+else:
+    print(f"Valor {valor_um} é negativo")    
 
