@@ -1,1 +1,10 @@
 Faça um Programa que peça dois números e imprima o maior deles.
+
+numero_um = float(input("Insira o primeiro número"))
+numero_dois = float(input("Insira o segundo número"))
+
+
+if numero_um > numero_dois:
+    print(numero_um)
+else:
+    print(numero_dois)    
