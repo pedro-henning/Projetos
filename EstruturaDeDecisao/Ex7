@@ -1,1 +1,19 @@
+Faça um Programa que leia três números e mostre o maior e o menor deles.
 
+numero_um = float(input("Insira o primeiro numero"))
+numero_dois = float(input("Insira o segundo numero"))
+numero_tres = float(input("Insira o terceiro numero"))
+
+if numero_um > numero_dois and numero_um > numero_tres:
+    print(f"O número {numero_um} é maior que o {numero_dois} e o {numero_tres}")
+elif  numero_dois > numero_um and numero_um > numero_tres:
+    print(f"O número {numero_dois} é maior que o {numero_um} e o {numero_tres}") 
+else:
+    print(f"O número {numero_tres} é maior que o {numero_um} e o {numero_dois}")     
+
+if numero_um < numero_dois and numero_um < numero_tres:
+    print(f"O número {numero_um} é menor que o {numero_dois} e o {numero_tres}")
+elif  numero_dois < numero_um and numero_um < numero_tres:
+    print(f"O número {numero_dois} é menor que o {numero_um} e o {numero_tres}") 
+else:
+    print(f"O número {numero_tres} é menor que o {numero_um} e o {numero_dois}")         
