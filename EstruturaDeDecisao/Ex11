@@ -8,3 +8,25 @@ o salário antes do reajuste;
 o percentual de aumento aplicado;
 o valor do aumento;
 o novo salário, após o aumento.
+
+try:
+    salario = float(input("Insira o salário do colaborador para ver o aumento"))
+except ValueError:
+    print("Insira um valor válido")
+
+
+if salario <= 280:
+    calculo20 = (salario * 0.20) + salario
+    print(f"O salário antigo era de {salario} e com o reajuste de 20% passa a ser de {calculo20}")
+elif salario > 280 and salario < 700:
+    calculo15 = (salario * 0.15) + salario
+    print(f"O salário antigo era de {salario} e com o reajuste de 15% passa a ser de {calculo15}")
+elif salario >= 700 and salario < 1500:
+    calculo10 = (salario * 0.10) + salario
+    print(f"O salário antigo era de {salario} e com o reajuste de 10% passa a ser de {calculo10}")
+elif salario >= 1500:
+    calculo05 = (salario * 0.05) + salario
+    print(f"O salário antigo era de {salario} e com o reajuste de 5% passa a ser de {calculo05}")
+
+
+
