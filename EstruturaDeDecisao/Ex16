@@ -1,28 +1,39 @@
-Faça um Programa que peça os 3 lados de um triângulo. O programa deverá informar se os valores podem ser um triângulo. Indique, caso os lados formem um triângulo, se o mesmo é: equilátero, isósceles ou escaleno.
-Dicas:
-Três lados formam um triângulo quando a soma de quaisquer dois lados for maior que o terceiro;
-Triângulo Equilátero: três lados iguais;
-Triângulo Isósceles: quaisquer dois lados iguais;
-Triângulo Escaleno: três lados diferentes;
+Faça um programa que calcule as raízes de uma equação do segundo grau, na forma ax2 + bx + c. O programa deverá pedir os valores de a, b e c e fazer as consistências, informando ao usuário nas seguintes situações:
+Se o usuário informar o valor de A igual a zero, a equação não é do segundo grau e o programa não deve fazer pedir os demais valores, sendo encerrado;
+Se o delta calculado for negativo, a equação não possui raizes reais. Informe ao usuário e encerre o programa;
+Se o delta calculado for igual a zero a equação possui apenas uma raiz real; informe-a ao usuário;
+Se o delta for positivo, a equação possui duas raiz reais; informe-as ao usuário;
 
+import math 
 
-def classificar_triangulo(lado1, lado2, lado3):
-    if lado1 + lado2 > lado3 and lado1 + lado3 > lado2 and lado2 + lado3 > lado1:
-       if lado1 == lado2 == lado3:
-           return "Triângulo equilátero"
-       elif lado1 == lado2 or lado1 == lado3 or lado2 == lado3:
-           return("Triângulo isóceles")
-       else:
-           return "Triângulo escaleno"
+def calcular_raizes(a,b,c):
+    delta = b**2 - 4 * a * c
+
+    if delta < 0:
+        return "A equação Nào possui raízes reais"
+    elif delta == 0:
+        raiz = -b / (2*a)
+        return "A equação  possui uma raiz real", print(f"{raiz}")
     else:
-        return "Os valores não forma um triângulo"
+        raiz1 = (-b +math.sqrt(delta)) / (2*a) 
+        raiz2 = (-b +math.sqrt(delta)) / (2*a)            
+        return raiz1, raiz2
+
+#entrada de dados
+
+a = float(input("Digite o valor de a: "))        
+
+if a == 0:
+    print("A equação não é do segundo grau. Programa encerrado")
+else:
+    b = float(input("Digite o valor de b: "))    
+    c = float(input("Digite o valor de c: "))
 
 
 
-
-lado1 = float(input("Digite o comprimento do primeiro lado do triângulo: "))  
-lado2 = float(input("Digite o comprimento do segundo lado do triângulo: "))   
-lado3 =   float(input("Digite o comprimento do terceiro lado do triângulo: "))  
-
-resultado = classificar_triangulo(lado1, lado2, lado3)
+resultado = calcular_raizes(a, b, c)    
 print(resultado)
+
+
+
+
