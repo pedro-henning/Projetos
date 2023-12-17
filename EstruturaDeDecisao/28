@@ -1,1 +1,51 @@
+O Hipermercado Tabajara está com uma promoção de carnes que é imperdível. Confira:
+                      Até 5 Kg           Acima de 5 Kg
+File Duplo      R$ 4,90 por Kg          R$ 5,80 por Kg
+Alcatra         R$ 5,90 por Kg          R$ 6,80 por Kg
+Picanha         R$ 6,90 por Kg          R$ 7,80 por Kg
+Para atender a todos os clientes, cada cliente poderá levar apenas um dos tipos de carne da promoção, porém não há limites para a quantidade de carne por cliente. 
+Se compra for feita no cartão Tabajara o cliente receberá ainda um desconto de 5% sobre o total da compra.
+Escreva um programa que peça o tipo e a quantidade de carne comprada pelo usuário e gere um cupom fiscal, 
+contendo as informações da compra: tipo e quantidade de carne, preço total, tipo de pagamento, valor do desconto e valor a pagar.
+
+
+def calcular_valor_a_pagar(tipo_carne, quantidade_kg, cartao_tabajara):
+    
+    tabela_precos = {
+        "File Duplo": {"ate_5kg": 4.90, "acima_5kg": 5.80},
+        "Alcatra": {"ate_5kg": 5.90, "acima_5kg": 6.80},
+        "Picanha": {"ate_5kg": 6.90, "acima_5kg": 7.80},
+    }
+
+  
+    if quantidade_kg <= 5:
+        preco_kg = tabela_precos[tipo_carne]["ate_5kg"]
+    else:
+        preco_kg = tabela_precos[tipo_carne]["acima_5kg"]
+
+    valor_total = quantidade_kg * preco_kg
+
+    desconto = 0.05 * valor_total if cartao_tabajara else 0
+
+    valor_a_pagar = valor_total - desconto
+
+    return valor_total, desconto, valor_a_pagar
+
+
+
+tipo_carne = input("Digite o tipo de carne (File Duplo, Alcatra ou Picanha): ")
+quantidade_kg = float(input("Digite a quantidade em Kg: "))
+cartao_tabajara = input("A compra será feita no cartão Tabajara? (Digite 'sim' ou 'nao'): ").lower() == 'sim'
+
+
+valor_total, desconto, valor_a_pagar = calcular_valor_a_pagar(tipo_carne, quantidade_kg, cartao_tabajara)
+
+print("\nCupom Fiscal:")
+print(f"Tipo de carne: {tipo_carne}")
+print(f"Quantidade: {quantidade_kg} Kg")
+print(f"Preço total: R$ {valor_total:.2f}")
+print(f"Tipo de pagamento: {'Cartão Tabajara' if cartao_tabajara else 'Dinheiro'}")
+print(f"Desconto: R$ {desconto:.2f}")
+print(f"Valor a pagar: R$ {valor_a_pagar:.2f}")
+
 
