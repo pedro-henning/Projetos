@@ -1,1 +1,41 @@
+Uma fruteira está vendendo frutas com a seguinte tabela de preços:
+                      Até 5 Kg           Acima de 5 Kg
+Morango         R$ 2,50 por Kg          R$ 2,20 por Kg
+Maçã            R$ 1,80 por Kg          R$ 1,50 por Kg
+Se o cliente comprar mais de 8 Kg em frutas ou o valor total da compra ultrapassar R$ 25,00, receberá ainda um desconto de 10% sobre este total. 
+Escreva um algoritmo para ler a quantidade (em Kg) de morangos e a quantidade (em Kg) de maças adquiridas e escreva o valor a ser pago pelo cliente.
+
+def calcular_valor_a_pagar(kg_morangos, kg_macas):
+    preco_morango_ate_5kg = 2.50
+    preco_morango_acima_5kg = 2.20
+    preco_maca_ate_5kg = 1.80
+    preco_maca_acima_5kg = 1.50
+
+    if kg_morangos <= 5:
+        valor_morangos = kg_morangos * preco_morango_ate_5kg
+    else:
+        valor_morangos = kg_morangos * preco_maca_acima_5kg
+
+    if kg_macas <= 5:
+        valor_macas = kg_macas * preco_maca_ate_5kg 
+    else:
+        valor_macas = kg_macas * preco_maca_acima_5kg
+
+    valor_total = valor_macas + valor_morangos
+
+
+    if kg_morangos + kg_macas > 8 or valor_total > 25.00:
+        desconto = 0.10 * valor_total    
+        valor_total -= desconto
+
+    return valor_total
+
+
+kg_morangos = float(input("Digite a quantidade de morangos em KG: "))
+
+kg_macas= float(input("Digite a quantidade de macas em KG: "))
+
+
+valor_a_pagar = calcular_valor_a_pagar(kg_morangos, kg_macas)
+print(f"O valor a ser pago pelo cliente é: R$ {valor_a_pagar}")
 
