@@ -1,1 +1,15 @@
+Faça um programa que receba dois números inteiros e gere os números inteiros que estão no intervalo compreendido por eles.
+
+
+inicio = int(input("Insira o primeiro número"))
+fim = int(input("Insira o segundo número"))
+
+#garantindo que o segundo numero seja maior que o primeiro:
+if inicio > fim:
+    inicio, fim = fim, inicio
+
+print(f"Números no intervalo de {inicio} a {fim}:")
+
+for numero in range(inicio, fim + 1):
+    print(numero)
 
