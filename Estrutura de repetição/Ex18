@@ -1,1 +1,26 @@
+Faça um programa que, dado um conjunto de N números, determine o menor valor, o maior valor e a soma dos valores.
+
+
+
+n = int(input("Digite a quantidade de números"))
+
+menor_valor = float('inf')
+maior_valor = float('-inf')
+soma_valores = 0
+
+for _ in range(n):
+    numero = float(input("Digite um número"))
+
+    #atualiza menor e maior
+    menor_valor = min(menor_valor, numero)
+    maior_valor = max(maior_valor, numero)
+
+
+    soma_valores += numero
+
+
+
+print(f"Menor valor: {menor_valor}")
+print(f"Maior valor: {maior_valor}")
+print(f"Soma dos valores: {soma_valores}")
 
