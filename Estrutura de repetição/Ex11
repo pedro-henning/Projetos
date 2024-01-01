@@ -1,1 +1,17 @@
 
+Altere o programa anterior (ex 10) para mostrar no final a soma dos números.
+
+inicio = int(input("Insira o primeiro número"))
+fim = int(input("Insira o segundo número"))
+soma = 0
+
+#garantindo que o segundo numero seja maior que o primeiro:
+if inicio > fim:
+    inicio, fim = fim, inicio
+
+print(f"Números no intervalo de {inicio} a {fim}:")
+
+for numero in range(inicio, fim + 1):
+    soma += numero
+    print(numero)
+    print(f"A soma dos números é: {soma}")
