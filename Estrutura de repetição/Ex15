@@ -1,1 +1,15 @@
+A série de Fibonacci é formada pela seqüência 1,1,2,3,5,8,13,21,34,55,... Faça um programa capaz de gerar a série até o n−ésimo termo.
 
+n = int(input("Digite o valor de n para gerar a série de Fibonacci até o n-ésimo termo: "))
+
+#inicializa os primeiros dois termos da série
+termo_anterior = 0
+termo_atual = 1
+
+
+#imprime os termos da série até o n-ésimo termo
+
+print("Série de Fibonacci: ")
+for _ in range(n):
+    print(termo_anterior, end = " ")
+    termo_anterior, termo_atual = termo_atual, termo_anterior + termo_atual
