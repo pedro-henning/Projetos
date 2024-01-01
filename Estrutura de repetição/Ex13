@@ -1,1 +1,20 @@
+Faça um programa que peça dois números, base e expoente, calcule e mostre o primeiro número elevado ao segundo número. 
+Não utilize a função de potência da linguagem.# Solicita ao usuário para inserir a base e o expoente
+
+
+base = float(input("Digite a base: "))
+expoente = int(input("Digite o expoente (um número inteiro): "))
+
+# Inicializa o resultado como 1
+resultado = 1
+
+# Calcula a potência sem usar a função de potência
+for i in range(abs(expoente)):
+    if expoente >= 0:
+        resultado *= base
+    else:
+        resultado /= base
+
+# Imprime o resultado
+print(f"{base} elevado a {expoente} é igual a {resultado}")
 
