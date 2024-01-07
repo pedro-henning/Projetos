@@ -1,1 +1,27 @@
+Numa eleição existem três candidatos. 
+Faça um programa que peça o número total de eleitores.
+Peça para cada eleitor votar e ao final mostrar o número de votos de cada candidato.
 
+def realizar_eleicao(total_eleitores):
+    votos = {"Candidato 1": 0, "Candidato 2": 0, "Candidato 3": 0}
+
+    for _ in range(total_eleitores):
+        print("\nOpções de voto:")
+        for candidato in votos:
+            print(f"{candidato}: {votos[candidato]}")
+
+        voto = int(input("\nDigite o número do candidato escolhido (1, 2 ou 3): "))
+
+        if 1 <= voto <= 3:
+            candidato_escolhido = f"Candidato {voto}"
+            votos[candidato_escolhido] += 1
+            print(f"Você votou no {candidato_escolhido}")
+        else:
+            print("Opção inválida. Tente novamente")
+
+    print("\nResultado Final:")
+    for candidato, qtd_votos in votos.items():
+        print(f"{candidato}: {qtd_votos} votos")
+
+total_eleitores = int(input("Digite o número total de eleitores: "))
+realizar_eleicao(total_eleitores)
