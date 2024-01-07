@@ -1,1 +1,25 @@
+Faça um programa que calcule o mostre a média aritmética de N notas.
+
+def calcular_media(notas):
+    total_notas = len(notas)
+    soma_notas = sum(notas)
+    
+    if total_notas > 0:
+        media = soma_notas / total_notas
+        return media
+    else:
+        return None
+
+N = int(input("Digite a quantidade de notas (N): "))
+notas = []
+for i in range(N):
+    nota = float(input(f"Digite a nota {i + 1}: "))
+    notas.append(nota)
+
+media = calcular_media(notas)
+
+if media is not None:
+    print(f"A média aritmética das {N} notas é: {media:.2f}")
+else:
+    print("Não foi possível calcular a média, pois não há notas.")
 
