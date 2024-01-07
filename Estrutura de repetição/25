@@ -1,1 +1,27 @@
+Faça um programa que peça para n pessoas a sua idade, ao final o programa devera verificar se a média de idade
+da turma varia entre 0 e 25,26 e 60 e maior que 60; e então, dizer se a turma é jovem, adulta ou idosa, conforme a média calculada.
 
+def classificar_turma(media_idades):
+    if 0 <= media_idades <= 25.25:
+        return "Turma Jovem"
+    elif 25.26 <= media_idades <= 60:
+        return "Turma Adulta"
+    else:
+        return "Turma Idosa"
+    
+
+ n = int(input("Digite o número de pessoas"))
+
+soma_idades = 0
+
+for i in range(n):
+    idade = int(input(f"digite a idade da pessoa {i + 1}: "))
+    soma_idades += idade
+
+#calcula a média das idades
+media_idades = soma_idades / n if n > 0 else 0    
+
+classificar = classificar_turma(media_idades)
+
+print(f"A média de idades da turma é: {media_idades:.2f}")
+print(f"A turma é classificada como: {classificar}")
