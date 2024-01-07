@@ -1,1 +1,22 @@
+Faça um programa que peça um número inteiro e determine se ele é ou não um número primo. Um número primo é aquele que é divisível somente por ele mesmo e por 1.
+
+def eh_primo(numero):
+    if numero <= 1:
+        return False #numeros menos ou iguais a um não são primos
+    
+    for i in range(2, int(numero**0,5)+ 1):
+        if numero % i == 0:
+            return False   # Se for divisível por algum número entre 2 e a raiz quadrada do número, não é primo
+    return True #Se não foi encontrado nenhum divisor, o número é primo
+
+
+
+numero = int(input("Digite um número inteiro: "))
+
+if eh_primo(numero):
+    print(f"{numero} é um numero primo")
+
+else:
+    print(f"{numero} não é um número primo")
+
 
