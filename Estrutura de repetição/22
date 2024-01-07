@@ -1,1 +1,35 @@
+Altere o programa de cálculo dos números primos, informando, caso o número não seja primo, por quais número ele é divisível.
+
+def fatores_divisor(numero):
+    fatores = []
+    for i in range(2, int(numero ** 0.5) + 1):
+        if numero % i == 0:
+            fatores.append(i)
+            if i != numero // i:
+                fatores.append(numero // i)
+
+    return fatores
+
+def eh_primo(numero):
+    if numero <= 1:
+        return False, []
+    
+    fatores = fatores_divisor(numero)
+    
+    if not fatores:
+        return True, []
+    
+    return False, fatores
+
+numero = int(input("Digite um número inteiro: "))
+
+is_primo, divisores = eh_primo(numero)
+
+if is_primo:
+    print(f"{numero} é um número primo")
+else:
+    print(f"{numero} não é um número primo. É divísivel por: {divisores}")    
+
+
+
 
