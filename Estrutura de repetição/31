@@ -1,1 +1,29 @@
+O Sr. Manoel Joaquim expandiu seus negócios para além dos negócios de 1,99 e agora possui uma loja de conveniências.
+Faça um programa que implemente uma caixa registradora rudimentar. O programa deverá receber um número desconhecido de valores
+referentes aos preços das mercadorias. Um valor zero deve ser informado pelo operador para indicar o final da compra.
+O programa deve então mostrar o total da compra e perguntar o valor em dinheiro que o cliente forneceu, para então calcular e 
+mostrar o valor do troco. Após esta operação, o programa deverá voltar ao ponto inicial, 
+para registrar a próxima compra. A saída deve ser conforme o exemplo abaixo:
 
+while True:
+    total_compra = 0.0
+    while True:
+        preco_mercadoria = float(input("Digite o preço da mercadoria"))
+
+        if preco_mercadoria == 0:
+            break
+        else:
+            total_compra += preco_mercadoria
+
+
+    print(f"Total da compra: R${total_compra:.2f}")
+
+    valor_pago = float(input("Digite o valor fornecido pelo cliente: R$ "))
+
+    troco = valor_pago - total_compra
+
+    print(f"Troco: R4 {troco:.2f}")
+
+    continuar = input ("Deseja registrar outra compra? (Digite 's' para sim ou qualquer outra tecla para encerrar): ")
+    if continuar.lower() != 's':
+        break
