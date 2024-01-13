@@ -1,1 +1,18 @@
+Faça um programa que calcule o valor total investido por um colecionador em sua coleção de CDs e o valor médio gasto em cada um deles.
+quantidade_cds = int(input("Insira a quantidade de CDS"))
 
+total_investido = 0
+
+
+for i in range(1, quantidade_cds + 1):
+    valor_cd = float(input(f"Informe o valor do CD {i}"))
+    total_investido += valor_cd
+
+
+valor_medio_por_cd = total_investido / quantidade_cds
+
+print(f"\nTotal investido em CDs: R${total_investido:.2f}")
+print(f"Valor médio gasto em cada CD: R${valor_medio_por_cd:.2f}")
+
+
+O usuário deverá informar a quantidade de CDs e o valor para em cada um.
