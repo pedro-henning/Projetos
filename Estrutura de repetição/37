@@ -1,1 +1,54 @@
+Uma academia deseja fazer um senso entre seus clientes para descobrir o mais alto, o mais baixo
+, a mais gordo e o mais magro, para isto você deve fazer um programa que pergunte a cada um dos 
+clientes da academia seu código, sua altura e seu peso. O final da digitação de dados deve ser 
+dada quando o usuário digitar 0 (zero) no campo código. Ao encerrar o programa também deve ser 
+informados os códigos e valores do clente mais alto, 
+do mais baixo, do mais gordo e do mais magro, além da média das alturas e dos pesos dos clientes
 
+
+
+
+codigo_mais_alto = codigo_mais_baixo = codigo_mais_gordo = codigo_mais_magro = 0
+altura_mais_alto = altura_mais_baixo = peso_mais_gordo = peso_mais_magro = 0
+soma_alturas = soma_pesos = contador_clientes = 0
+
+
+while True:
+    codigo = int(input("Digite o códgio do cliente (ou 0 oara encerrar"))
+
+    if codigo == 0:
+        break
+    altura = float(input("Digite a altura do cliente em metros: "))
+    peso = float(input("Digite o peso do cliente em quilogramas"))
+
+    soma_alturas += altura
+    soma_pesos += peso
+    contador_clientes += 1
+
+    #verificando o mais alto
+    if altura > altura_mais_alto:
+        altura_mais_alto = altura
+        codigo_mais_alto = codigo
+    
+    #verificando o mais baixo
+    if altura < altura_mais_baixo or altura_mais_baixo == 0:
+        altura_mais_baixo = altura
+        codigo_mais_baixo = codigo
+
+    if peso > peso_mais_gordo:
+        peso_mais_gordo = peso
+        codigo_mais_gordo = codigo
+
+    if peso < peso_mais_magro or peso_mais_magro == 0:
+        peso_mais_magro = peso
+        codigo_mais_magro = codigo
+
+    #calculo medias
+    media_alturas = soma_alturas / contador_clientes if contador_clientes > 0 else 0
+    media_pesos = soma_pesos / contador_clientes if contador_clientes > 0 else 0
+print(f"Código do cliente mais alto: {codigo_mais_alto}, Altura: {altura_mais_alto} metros")
+print(f"Código do cliente mais baixo: {codigo_mais_baixo}, Altura: {altura_mais_baixo} metros")
+print(f"Código do cliente mais gordo: {codigo_mais_gordo}, Peso: {peso_mais_gordo} kg")
+print(f"Código do cliente mais magro: {codigo_mais_magro}, Peso: {peso_mais_magro} kg")
+print(f"Média das alturas dos clientes: {media_alturas:.2f} metros")
+print(f"Média dos pesos dos clientes: {media_pesos:.2f} kg")
