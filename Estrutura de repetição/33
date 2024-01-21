@@ -1,1 +1,37 @@
+O Departamento Estadual de Meteorologia lhe contratou para desenvolver um programa que leia as um conjunto indeterminado de temperaturas,
+e informe ao final a menor e a maior temperaturas informadas, bem como a média das temperaturas.
+
+soma_temperaturas = 0
+quantidade_temperaturas = 0
+maior_temperatura = float("-inf")
+menor_temperatura = float("inf")
+
+# entrada de dados
+while True:
+    try:
+        temperatura = input("Digite a temperatura (ou digite 'fim' para encerrar): ")
+        if temperatura.lower() == 'fim':
+            break
+        temperatura = float(temperatura)
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido ou 'fim' para encerrar.")
+        continue
+
+    # atualizar estatísticas
+    soma_temperaturas += temperatura
+    quantidade_temperaturas += 1
+
+    if temperatura > maior_temperatura:
+        maior_temperatura = temperatura
+    if temperatura < menor_temperatura:
+        menor_temperatura = temperatura
+
+if quantidade_temperaturas > 0:
+    media_temperaturas = soma_temperaturas / quantidade_temperaturas
+    print("\nEstatísticas das Temperaturas:")
+    print(f"Maior temperatura: {maior_temperatura}")
+    print(f"Menor temperatura: {menor_temperatura}")
+    print(f"Média das temperaturas: {media_temperaturas:.2f}")
+else:
+    print("Nenhuma temperatura foi fornecida")
 
