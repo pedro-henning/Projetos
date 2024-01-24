@@ -1,1 +1,24 @@
+Faça um programa que leia dez conjuntos de dois valores, o primeiro representando o número do aluno e o segundo representando a sua altura em centímetros. 
+Encontre o aluno mais alto e o mais baixo. 
+Mostre o número do aluno mais alto e o número do aluno mais baixo, junto com suas alturas.
 
+aluno_mais_alto = aluno_mais_baixo = 0
+altura_mais_alto = altura_mais_baixo = 0
+
+for _ in range(10):
+    numero_aluno = int(input("Digite o número do aluno "))
+    altura_aluno = float(input("Digite a atlura do aluno em centímetros"))
+
+
+    if altura_aluno > altura_mais_alto:
+        aluno_mais_alto = numero_aluno
+        altura_mais_alto = altura_aluno
+
+
+    if altura_aluno < altura_mais_baixo or altura_mais_baixo == 0:
+        aluno_mais_baixo = numero_aluno
+        altura_mais_baixo = altura_aluno
+
+
+print(f"O aluno mais alto é o número {aluno_mais_alto} com altura {altura_mais_alto}")
+print(f" O aluno mais baixo é o número {aluno_mais_baixo} com a altura {altura_mais_baixo}")        
