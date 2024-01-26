@@ -10,7 +10,6 @@ Faça um programa que leia o código dos itens pedidos e as quantidades desejada
 Calcule e mostre o valor a ser pago por item (preço * quantidade) e o total geral do pedido.
 Considere que o cliente deve informar quando o pedido deve ser encerrado.
 
-
 # Inicializa o dicionário com o cardápio
 cardapio = {
     100: {"Especificação": "Cachorro quente", "Preço": 1.20},
@@ -33,3 +32,17 @@ while True:
     if codigo_item not in cardapio:
         print("Código do item inválido. Tente novamente.")
         continue  # Adiciona a
+
+    quantidade = int(input("Digite a quantidade desejada: "))
+
+    #calculo
+    preco_item = cardapio[codigo_item]["Preço"]
+    valor_pago_por_item = preco_item * quantidade
+    total_geral += valor_pago_por_item
+
+    print(f"Valor a ser pago por {cardapio[codigo_item]['Especificação']} (x{quantidade}): R$ {valor_pago_por_item:.2f}")
+
+print(f"\nTotal geral do pedido: R$ {total_geral:.2f}") 
+
+
+  
