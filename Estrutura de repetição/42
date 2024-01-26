@@ -1,3 +1,35 @@
 Faça um programa que leia uma quantidade indeterminada de números positivos e conte quantos deles estão nos seguintes intervalos: 
 [0-25], [26-50], [51-75] e [76-100]. 
 A entrada de dados deverá terminar quando for lido um número negativo.
+
+
+# Inicializa as variáveis para contar os números nos intervalos
+
+cont_intervalo_0_25 = cont_intervalo_26_50 = cont_intervalo_51_75 = cont_intervalo_76_100 = 0
+
+
+# Loop para ler números indefinidamente até que um número negativo seja inserido
+while True:
+    numero = float(input("Digite um número positivo (ou negativo para encerrar"))
+
+    #verificando se o numero é negativo para encerrar o loop
+    if numero < 0:
+        break
+
+    if 0 <= numero <= 25:
+        cont_intervalo_0_25 += 1
+    elif 26 <= numero <= 50:
+        cont_intervalo_26_50 += 1
+    elif 51 <= numero <= 75:
+        cont_intervalo_51_75 += 1
+    elif 76 <= numero <= 100:
+        cont_intervalo_76_100 += 1
+    else:
+        print("Número fora dos intervalos considerados. Tente novamente")
+
+#imprimindo os resultados
+print("|nQuantidade de números nos intervalos:")
+print("[0-25]:", cont_intervalo_0_25)
+print("[26-50]:", cont_intervalo_26_50)
+print("[51-75]:", cont_intervalo_51_75)
+print("[76-100]:", cont_intervalo_76_100)
