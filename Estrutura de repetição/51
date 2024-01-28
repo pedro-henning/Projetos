@@ -1,1 +1,40 @@
+Faça um programa que mostre os n termos da Série a seguir:
+  S = 1/1 + 2/3 + 3/5 + 4/7 + 5/9 + ... + n/m. 
+Imprima no final a soma da série.
 
+
+
+
+def calcular_serie(n):
+    soma = 0
+    serie = []
+
+    for i in range(1, n+1):
+        termo = i / (2* i -1)
+        soma += termo
+        serie.append(termo)
+
+    return serie, soma
+
+
+
+def main():
+    try:
+        n = int(input("Digite o número de termos da série"))
+        if n <= 0:
+            raise ValueError("O número de termos deve ser positivo")
+        
+
+        resultado_serie, soma = calcular_serie(n)
+
+        print("\nSérie")
+        for i, termo in enumerate(resultado_serie, start=1):
+            print(f"Termo {i}: {termo:.4f}")
+
+        print(f"\nA soma da série é: {soma:.4f}")
+
+    except ValueError as e:
+        print(f"Erro: {e}")
+
+
+main() 
