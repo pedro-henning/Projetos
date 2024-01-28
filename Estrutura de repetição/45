@@ -14,3 +14,53 @@ Gabarito da Prova:
 08 - C
 09 - B
 10 - A
+
+#função para calcular a nota do aluno
+
+def calcular_nota(respostas_aluno, gabarito):
+    nota = 0
+    for i in range(len(respostas_aluno)):
+        if respostas_aluno[i].upper() == gabarito[i]:
+            nota += 1
+        return nota
+
+
+#função principal
+
+def main():
+    gabarito = ['A','B','C','D','E','E','D','C','B','A']     
+    total_alunos = 0
+    total_acertos = []
+
+    while True:
+        respostas_aluno = []
+
+        #perguntar ao aluno as respostas de cada questão
+        for i in range(1, 11):
+            resposta = input(f"Digite a resposta da questão {i}: ").upper()
+            respostas_aluno.append(resposta)
+
+        #calcular a nota do aluno
+        nota_aluno = calcular_nota(respostas_aluno, gabarito)
+        total_acertos.append(nota_aluno)
+
+        #pergunta se outro aluno vai utilizar o sistema
+        outro_aluno = input("Outro aluno vai utilizar o sistema? (S/N)")
+        if outro_aluno != "S":
+            break
+
+        total_alunos += 1
+    
+
+    # Informar estatísticas
+    print("\nEstatísticas:")
+    print(f"Maior acerto: {max(total_acertos)}")
+    print(f"Menor acerto: {min(total_acertos)}")
+    print(F"Total de alunos que utilizaram o sistema: {total_alunos + 1}")
+    if total_alunos > 0:
+        media_notas = sum(total_acertos) / len(total_acertos)
+        print(f"Média das notas da turma: {media_notas:.2f}")
+
+
+#executar o programa principal
+main()       
