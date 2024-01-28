@@ -1,1 +1,28 @@
+Faça um programa que peça um numero inteiro positivo e em seguida mostre este numero invertido.
+Exemplo:
+  12376489
+  => 98467321
 
+
+#função para inverter um número inteiro positivo
+def inverter_numero(numero):
+    numero_invertido = int(str(numero)[::-1])
+    return numero_invertido
+
+
+#função principal
+def main():
+    try:
+        numero = int(input("Digite um número inteiro positivo)"))
+        if numero < 0:
+            raise ValueError("Por favor insira um número inteiro positivo")
+        
+        numero_invertido = inverter_numero(numero)
+        print(f"\nNúmero invertido{numero_invertido}")
+    except ValueError as e:
+        print(f"Erro: {e}")
+
+
+
+main()            
+                     
