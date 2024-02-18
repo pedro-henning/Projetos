@@ -1,1 +1,38 @@
+Faça um Programa que peça as quatro notas de 10 alunos, 
+calcule e armazene num vetor a média de cada aluno, imprima o número de alunos com média maior ou igual a 7.0.
 
+
+
+def ler_notas():
+    notas_alunos = []
+    for i in range(10):
+        notas = []
+        for j in range(4):
+            nota = float(input(f"Digite a nota {j + 1} do aluno {i + 1}"))
+            notas.append(nota)
+        notas_alunos.append(notas)
+    return notas_alunos    
+
+
+
+def calcular_media(notas_alunos):
+    medias = []
+    for notas in notas_alunos:
+        media = sum(notas) / len(notas)
+        medias.append(media)
+    return medias
+
+
+def contar_e_imprimir_alunos_aprovados(medias):
+    alunos_aprovados = sum(1 for media in medias if media >= 7.0)
+    print(f"Número de alunos com média maior ou igual a 7.0: {alunos_aprovados}")
+
+
+
+if __name__ == "__main__":
+    notas_alunos = ler_notas()
+
+    media_alunos = calcular_media(notas_alunos)
+
+    #Chamando a função para contar e imprimir o número de alunos aprovados
+    contar_e_imprimir_alunos_aprovados(medias_alunos)
