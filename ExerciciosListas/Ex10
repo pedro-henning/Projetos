@@ -1,1 +1,26 @@
+Faça um Programa que leia dois vetores com 10 elementos cada.
+Gere um terceiro vetor de 20 elementos, 
+cujos valores deverão ser compostos pelos elementos intercalados dos dois outros vetores.
 
+def ler_vetor():
+    vetor = []
+    for i in range(10):
+        elemento = int(input(f"Digite o {i+1} primeiro elemento"))
+        vetor.append(elemento)
+    return vetor
+
+def intercalar_vetores(vetor1, vetor2):
+    vetor_intercalado = []
+    for elemento1, elemento2 in zip(vetor1,vetor2):
+        vetor_intercalado.append(elemento1)
+        vetor_intercalado.append(elemento2)
+    return vetor_intercalado
+
+
+if __name__ == "__main__":
+    vetor1 = ler_vetor()
+    vetor2 = ler_vetor()
+
+    vetor_intercalado = intercalar_vetores(vetor1, vetor2)
+
+    print("Terceiro vetor intercalado:", vetor_intercalado)
