@@ -1,1 +1,17 @@
+Faça um Programa que leia um vetor de 10 números reais e mostre-os na ordem inversa.
 
+def ler_vetor():
+    vetor = []
+    for i in range(10):
+        numero=float(input(f"Digite o {i+1} primeiro número real"))
+        vetor.append(numero)
+    return vetor
+
+def mostrar_vetor_inverso(vetor):
+    print("Números na ordem inversa:")
+    for numero in range(len(vetor) - 1, -1, -1):
+        print(vetor[i])
+
+if __name__ == "__main__":
+    vetor_numeros = ler_vetor
+    mostrar_vetor_inverso(vetor_numeros)        
