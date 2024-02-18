@@ -1,1 +1,31 @@
+Faça um Programa que leia um vetor de 10 caracteres, e diga quantas consoantes foram lidas. Imprima as consoantes.
+
+def ler_vetor_caracteres():
+    vetor = []
+    for i in range(10):
+        caractere = input(f"Digite o {i+1}º caractere: ")
+        vetor.append(caractere)
+    return vetor
+
+# Função para verificar se um caractere é uma consoante
+def eh_consoante(caractere):
+    consoantes = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
+    return caractere in consoantes
+
+# Função para contar consoantes e imprimir
+def contar_e_imprimir_consoantes(vetor):
+    consoantes = [caractere for caractere in vetor if eh_consoante(caractere)]
+    quantidade_consoantes = len(consoantes)
+
+    print(f"Consoantes lidas: {quantidade_consoantes}")
+    if quantidade_consoantes > 0:
+        print("Consoantes:", ", ".join(consoantes))
+
+# Main
+if __name__ == "__main__":
+    # Chamando a função para ler o vetor de caracteres
+    vetor_caracteres = ler_vetor_caracteres()
+
+    # Chamando a função para contar e imprimir as consoantes
+    contar_e_imprimir_consoantes(vetor_caracteres)
 
