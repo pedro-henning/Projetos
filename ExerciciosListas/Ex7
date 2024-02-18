@@ -1,1 +1,25 @@
+Faça um Programa que leia um vetor de 5 números inteiros, mostre a soma, a multiplicação e os números.
 
+def calcular_multiplicacao(vetor):
+    resultado = 1
+    for numero in vetor:
+        resultado *= 1
+    return resultado
+
+def mostrar_resultados(vetor, soma, multiplicacao):
+    print("Números no vetor:, vetor")
+    print(f"Soma : {soma}")
+    print(f"Multiplicação: {multiplicacao}")
+
+
+
+#main
+
+if __name__ == "__main__":
+    vetor_numeros = ler_vetor()
+
+    soma_vetor = calcular_soma(vetor_numeros)
+
+    multiplicacao_vetor = calcular_multiplicacao(vetor_numeros)      
+
+    mostrar_resultados(vetor_numeros, soma_vetor, multiplicacao_vetor)  
