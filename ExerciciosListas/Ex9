@@ -1,1 +1,19 @@
+Faça um Programa que leia um vetor A com 10 números inteiros, calcule e mostre a soma dos quadrados dos elementos do vetor.
 
+def ler_vetor():
+    vetor = []
+    for i in range(10):
+        numero = int(input(f"Digite o {i +1}º número inteiro: "))
+        vetor.append(numero)
+    return vetor
+
+def calcular_soma_quadrados(vetor):
+    soma_quadrados = sum(numero**2 for numero in vetor)
+    return soma_quadrados
+
+
+if __name__ == "__main__":
+    vetor_A = ler_vetor()
+    soma_quadrados = calcular_soma_quadrados(vetor_A)
+
+    print("A soma dos quadrados dos elemtnos do vetor é: {soma_quadrados}")
