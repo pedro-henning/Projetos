@@ -1,1 +1,30 @@
+Faça um Programa que leia um vetor de 5 números inteiros e mostre-os.
+
+
+def ler_vetor():
+    vetor = []
+    for i in range(5):
+        numero = int(input(f"Digite o {i+1} número inteiro"))
+        vetor.append(numero)
+    return vetor
+
+
+#mostrar numero do vetor
+def monstrar_vetor(vetor):
+    print("Números no vetor")
+    for numero in vetor:
+        print(numero)
+
+
+#main
+        
+if __name__ == "__main__":
+    vetor_numeros = ler_vetor()
+
+    monstrar_vetor(vetor_numeros)
+
+    
+
+
+
 
