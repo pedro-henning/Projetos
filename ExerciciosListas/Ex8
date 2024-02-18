@@ -1,1 +1,29 @@
+Faça um Programa que peça a idade 
+e a altura de 5 pessoas, armazene cada informação no seu respectivo vetor.
+Imprima a idade e a altura na ordem inversa a ordem lida.
+
+
+def ler_idades_alturas():
+    idades = []
+    alturas = []
+    
+    for i in range(5):
+        idade = int(input(f"Digite a idade da pessoa {i+1}"))
+        altura = float(input(f"Digite a altura da pessoa {i+1} em metros: "))
+        idades.append(idade)
+        alturas.append(altura)
+    return idades, alturas
+
+def imprimir_inverso(idades, alturas):
+    print("\nIdades e Alturas na Ordem Inversa:")
+    for i in range(4, -1, -1):
+        print(f"Pessoa {i + 1} - Idade: {idades[i]}, Altura: {alturas[i]} metros")
+
+
+if __name__ == "__main__":
+    idades_pessoas, alturas_pessoas = ler_idades_alturas
+
+    imprimir_inverso(idades_pessoas, alturas_pessoas)
+
+    
 
