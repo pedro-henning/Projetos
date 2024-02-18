@@ -1,1 +1,25 @@
+Faça um Programa que leia 4 notas, mostre as notas e a média na tela.
 
+def ler_notas():
+    notas = []
+    for i in range(4):
+        nota = float(input(f"Digite a {i+1} primeira nota"))
+        notas.append(nota)
+    return notas
+
+def calcular_media(notas):
+    return sum(notas) / len(notas)
+
+def mostrar_resultados(notas, media):
+    print("Notas")
+    for i, nota in enumerate(notas, 1):
+        print(f"Nota {i}: {nota}")
+    print(f"Média: {media}")
+
+
+    if __name__ == "__main__":
+        notas_aluno = ler_notas()
+
+        media_notas = calcular_media(notas_aluno)
+
+        mostrar_resultados(notas_aluno, media_notas)
