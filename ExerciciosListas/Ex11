@@ -1,1 +1,37 @@
+Altere o programa anterior, intercalando 3 vetores de 10 elementos cada.
 
+def intercalar_tres_vetores(vetor1, vetor2, vetor3):
+    vetor_intercalado = []
+    for i in range(len(vetor1)):
+        vetor_intercalado.append(vetor1[i])
+        vetor_intercalado.append(vetor2[i])
+        vetor_intercalado.append(vetor3[i])
+    return vetor_intercalado
+
+
+def main():
+    vetor1 = []
+    for i in range(10):
+        elemento = int(input(f"Digite o {i + 1} elemento do primeiro vetor: "))
+        vetor1.append(elemento)
+
+    vetor2 = []
+    for i in range(10):
+        elemento = int(input(f"Digite o {i + 1} elemento do primeiro vetor: "))
+        vetor2.append(elemento)
+
+
+    vetor3 = []
+    for i in range(10):
+        elemento = int(input(f"Digite o {i + 1} elemento do primeiro vetor: "))
+        vetor3.append(elemento)
+
+
+    vetor_intercalado = intercalar_tres_vetores(vetor1, vetor2, vetor3)
+
+    print("\nVetor Intercalado:")
+    print(vetor_intercalado)
+
+
+if __name__ == "__main__":
+    main()
