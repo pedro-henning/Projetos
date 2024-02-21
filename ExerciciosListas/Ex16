@@ -1,1 +1,56 @@
+Utilize uma lista para resolver o problema a seguir. Uma empresa paga seus vendedores com base em comissões. O vendedor recebe $200 por semana mais 9 por cento de suas vendas brutas daquela semana. Por exemplo, um vendedor que teve vendas brutas de $3000 em uma semana recebe $200 mais 9 por cento de $3000, ou seja, um total de $470. Escreva um programa (usando um array de contadores) que determine quantos vendedores receberam salários nos seguintes intervalos de valores:
+$200 - $299
+$300 - $399
+$400 - $499
+$500 - $599
+$600 - $699
+$700 - $799
+$800 - $899
+$900 - $999
+$1000 em diante
 
+salarios = []
+
+num_vendedores = int(input("Digite o número de vendedores: "))
+
+for i in range(num_vendedores):
+    vendas_brutas = float(input(f"Digite as vendas brutas do vendedor {i + 1}"))
+    salario = 200 + 0.9 * vendas_brutas
+    salarios.append(salario)
+
+
+intervalos_salarios = [0] * 9
+
+
+
+#contando quantos vendedores estão em cada intervalo
+
+for salario in salarios:
+    if 200 <= salario <= 299:
+        intervalos_salarios[0] += 1
+    elif 300 <= salario <= 399:
+        intervalos_salarios[1] += 1
+    elif 400 <= salario <= 499:
+        intervalos_salarios[2] += 1
+    elif 500 <= salario <= 599:
+        intervalos_salarios[3] += 1
+    elif 600 <= salario <= 699:
+        intervalos_salarios[4] += 1
+
+    elif 700 <= salario <= 799:
+        intervalos_salarios[5] += 1
+    elif 800 <= salario <= 899:
+        intervalos_salarios[6] += 1
+    elif 900 <= salario <= 999:
+        intervalos_salarios[7] += 1
+    else:
+        intervalos_salarios[8] += 1
+
+#mostrando os resultados
+        
+for i, intervalo in enumerate(intervalos_salarios):
+    if i < 8:
+        print(f"${200 + i * 100} - ${299 + i * 100}: {intervalo}")
+    else:
+        print(f"${1000} em diante: {intervalo}")
+            
