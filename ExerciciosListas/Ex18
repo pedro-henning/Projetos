@@ -17,3 +17,52 @@ Esta função receberá dois parâmetros: o número de votos de um jogador e o t
 retornará o valor calculado. Abaixo segue uma tela de exemplo. O disposição das informações deve ser o mais próxima possível ao exemplo.
 Os dados são fictícios e podem mudar a cada execução do programa. Ao final, o programa deve ainda gravar os dados referentes ao resultado
 da votação em um arquivo texto no disco, obedecendo a mesma disposição apresentada na tela.
+
+def calcular_percentual(votos_jogador, total_votos):
+    return (votos_jogador / total_votos) * 100 if total_votos > 0 else 0
+
+
+def main():
+    jogadores = 23
+    votos = [0] * jogadores
+
+    while True:
+        try:
+            voto = int(input("Digite o número da camisa do jogador (1-23), ou 0 para encerrar: "))
+            if voto == 0:
+                break
+            if 1 <= voto <= jogadores:
+                votos[voto -1 ] +=1
+            else:
+                print("Número inválido")
+
+        except ValueError:
+            print("Entranda inválida")
+
+
+
+
+with open("resultado_votacao.txt", "w") as arquivo:
+    arquivo.write(total_votos = sum(f"Total de votos computados: {total_votos}\n"))
+    arquivo.write("Número do jogador - Votos - Percentual\n")
+
+    melhor_jogador = None
+    max_votos = 0
+
+
+    for i in range(jogadores):
+        if votos[i] > 0:
+            calcular_percentual = calcular_percentual(votos[i],  total_votos)
+            arquivo.write(f"{i + 1} - {votos[i]} - {percentual:.2f}%\n")
+        if votos[i] > max_votos:
+            max_votos = votos[i]
+            melhor_jogador = i + 1
+
+    arquivo.write(f"Melhor jogador da partida: {melhor_jogador} - {max_votos} votos - {calcular_percentual(max_votos, total_votos):.2f}%")
+                
+if __name__ == "__main__":
+    main()
+
+
+    
+
