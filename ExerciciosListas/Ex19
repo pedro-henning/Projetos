@@ -1,1 +1,58 @@
+"Qual o melhor Sistema Operacional para uso em servidores?"
 
+As possíveis respostas são:
+
+1- Windows Server
+2- Unix
+3- Linux
+4- Netware
+5- Mac OS
+6- Outro
+Você foi contratado para desenvolver um programa que leia o resultado da enquete e informe ao final o resultado da mesma. 
+O programa deverá ler os valores até ser informado o valor 0, que encerra a entrada dos dados. Não deverão ser aceitos valores 
+além dos válidos para o programa (0 a 6). Os valores referentes a cada uma das opções devem ser armazenados num vetor. 
+Após os dados terem sido completamente informados, o programa deverá calcular a percentual de cada um dos concorrentes e informar o vencedor da enquete. O formato da saída foi dado pela empresa, e é o seguinte:
+
+def main():
+    opcoes = ["", "Windows Server", "Unix", "Linux", "Netware", "Mac OS", "Outro"]
+    votos = [0] * 7
+
+    try:
+        arquivo = open("resultado_enquete.txt", "w")
+        arquivo.write("Sistema operacional - votos - percentual \n")
+
+        while True:
+            try:
+                voto = int(input("Informe o voto (1-6) ou 0 para encerrar: "))
+                if voto == 0:
+                    break
+                if 0 <= voto <= 6:
+                    votos[voto] += 1
+
+                else:
+                    print("Valor inválido")
+
+            except ValueError:
+                print("Valor inválido. Tente novamente")
+        total_votos = sum(votos)
+        max_votos, vencedor = max((v,i) for i, v in enumerate(votos[1:], 1))
+
+        for i in range(1, len(opcoes)):
+            percentual = (votos[i]/ total_votos) * 100 if total_votos > 0 else 0
+            arquivo.write(f"{opcoes[i]} - {votos[i]} - {percentual:.2f}%\n")
+
+        arquivo.write(f"\nVencedor da enquete: {opcoes[vencedor]}")
+
+
+
+    except Exception as e:
+        print(f"Erro ao escrever no arquivo: {e}")
+
+
+    finally:
+        if arquivo:
+            arquivo.close()
+
+
+if __name__ == "__main__":
+    main()
